@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 /* TODO
  * make initial size power of 2 
@@ -99,18 +100,22 @@ void addToArray(int num, ArrayInfo *arrayInfo){
 
 int main(int argc, char *argv[]){
     
-    int numElements;
+    int numElementsIn;
     printf("How many ints would you like in the original array?\n");
 
     //Make sure they typed in an int
     //Scanf returns the number of successfully read values 
-    if(scanf("%d", &numElements) != 1){
+    if(scanf("%d", &numElementsIn) != 1){
         printf("Not an int! Idiot.");
         exit(EXIT_FAILURE);
     }
-
-    printf("Please enter each of the %d ints individually followed by the enter key.\n", numElements);
-    int *dynamicArray = (int *) malloc(sizeof(int) * numElements);
+	// Take log2(numElementsIn) to make the first array size a power of 2
+	int numElements = pow((double)(2), (double)(log(numElementsIn)/log(2))+1.0); 
+	printf("numElements: %f\n", numElements);
+	printf("Please enter each of the %d ints individually followed by the enter key.\n", numElements);
+    
+	int *dynamicArray = (int *) malloc(sizeof(int) * numElements);
+	
     for(int i = 0; i < numElements; i++){
         scanf("%d", &dynamicArray[i]);   
     }
