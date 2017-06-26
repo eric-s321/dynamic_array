@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 
+/* TODO
+ * make initial size power of 2 
+ * make add command compatible with many integers at once
+ */
+
 typedef struct{
     int *head;
     int currentSize;
