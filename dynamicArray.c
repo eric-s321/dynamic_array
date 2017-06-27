@@ -109,13 +109,23 @@ int main(int argc, char *argv[]){
         printf("Not an int! Idiot.");
         exit(EXIT_FAILURE);
     }
+<<<<<<< HEAD
 	// Take log2(numElementsIn) to make the first array size a power of 2
 	double numElements = pow((double)(2), (double)((log((double)numElementsIn)/log(2.0)))); 
 	printf("%f\n", log(numElementsIn));
 	printf("numElements: %f\n", numElements);
 	
 	printf("Please enter each of the %f ints individually followed by the enter key.\n", numElements);
-    
+=======
+	/* //Take log2(numElementsIn) to make the first array size a power of 2
+	 * int numElements = pow((double)(2), ceil(log(numElementsIn)/log(2))); 
+	 *
+     * //I changed this print statement to numElementsIn because they are still only entering the amount that they specify.
+     * //However numElements is now the variable we should use to set the size of our initial array
+	 * printf("Please enter each of the %d ints individually followed by the enter key.\n", numElementsIn);
+     * fprintf(stderr, "numElements is %d\n", numElements);
+>>>>>>> f5b9a23fec0e50398f171e6c4f2fcdfce7aeaaef
+     */
 	int *dynamicArray = (int *) malloc(sizeof(int) * numElements);
 	
     for(int i = 0; i < numElements; i++){
