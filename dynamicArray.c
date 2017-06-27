@@ -111,8 +111,11 @@ int main(int argc, char *argv[]){
     }
 	//Take log2(numElementsIn) to make the first array size a power of 2
 	int numElements = pow((double)(2), ceil(log(numElementsIn)/log(2))); 
-
-    //I changed this print statement to numElementsIn because they are still only entering the amount that they specify.
+	//like that's fair that yours works, but why doesn't mine!!! 
+	//the only difference is that im adding one to the float...
+	//int numElements = pow((double)(2), (log(numElementsIn)/log(2))+1.0); 
+    
+	//I changed this print statement to numElementsIn because they are still only entering the amount that they specify.
     //However numElements is now the variable we should use to set the size of our initial array
 	printf("Please enter each of the %d ints individually followed by the enter key.\n", numElementsIn);
     fprintf(stderr, "numElements is %d\n", numElements);
