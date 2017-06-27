@@ -110,9 +110,11 @@ int main(int argc, char *argv[]){
         exit(EXIT_FAILURE);
     }
 	// Take log2(numElementsIn) to make the first array size a power of 2
-	int numElements = pow((double)(2), (double)(log(numElementsIn)/log(2))+1.0); 
+	double numElements = pow((double)(2), (double)((log((double)numElementsIn)/log(2.0)))); 
+	printf("%f\n", log(numElementsIn));
 	printf("numElements: %f\n", numElements);
-	printf("Please enter each of the %d ints individually followed by the enter key.\n", numElements);
+	
+	printf("Please enter each of the %f ints individually followed by the enter key.\n", numElements);
     
 	int *dynamicArray = (int *) malloc(sizeof(int) * numElements);
 	
